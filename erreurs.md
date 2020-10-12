@@ -17,3 +17,6 @@
 // Maximum execution time exceeded
 * Présence d'une boucle infinie
 
+// Undefined index
+* Tentative d'utilisation de variables inexistantes
+
