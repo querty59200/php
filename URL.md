@@ -20,6 +20,15 @@ $_GET['nom'] // renvoie la string Dupont
 ?>
 ```
 
+* La variable globale `$_POST` est un array associatif
+```php
+<?php
+// bonjour.php
+$_POST['nom'] // renvoie la string Dupont
+?>
+```
+Il est nécessaire de préciser dans le formulaire les `name`
+
 * Il est nécessaire de tester la présence des clés avec `isset()`
 ```php
 <?php
@@ -30,3 +39,6 @@ if (isset($_GET['nom']) AND isset($_GET['prenom'])) {
 } 
 ?>
 ```
+* Les failles XSS
+`htmlspecialchars` pour afficher les balises
+`strip_tags` pour retirer les balises
