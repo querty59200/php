@@ -17,7 +17,7 @@ $prenoms[] = "henri";
 echo $prenoms[1];
 ?>
 ```
-*Parcours d'un tableau numéroté
+* Parcours d'un tableau numéroté
 ```php
 <?php
 for($i = 0; $i < sizeof($prenoms)-1; $i++)
@@ -45,4 +45,12 @@ $coordonnees['ville'] = 'Marseille';
 <?php
 echo $coordonnees['prenom'];
 ?>
+```
+* Parcours d'un tableau associatif
+```php
+<?php
+foreach($coordonnees as $key => $value)
+{
+    echo $key . 'et ' . $value;
+}
 ```
