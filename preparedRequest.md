@@ -1,4 +1,5 @@
-````php
+### Avec les ?
+```php
 <?php
 
 $servname = 'localhost';
