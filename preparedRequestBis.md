@@ -1,4 +1,6 @@
 ### Avec des marqueurs nominatifs (possesseur = :possesseur, prix = :prix, ...)
+Nb : Attraper les erreurs SQL avec `die(print_r($db->errorInfo()));`
+
 ```php
 <?php
 
@@ -15,7 +17,7 @@ try {
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $db->beginTransaction();
     $req = $db->prepare($sql);
-    $req->execute(array('possesseur' => 'Florent'));
+    $req->execute(array('possesseur' => 'Florent')) or die(print_r($db->errorInfo()));
 
 } catch(PDOException $e){
     $db->rollBack();
