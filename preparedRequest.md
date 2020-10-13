@@ -1,4 +1,5 @@
 ### Avec les marqueurs ?
+Nb : Attraper les erreurs SQL avec `die(print_r($db->errorInfo()));`
 ```php
 <?php
 
