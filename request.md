@@ -1,3 +1,7 @@
+### Requete non protégé des failles XSS
+
+Nb : Attraper les erreurs SQL avec `die(print_r($db->errorInfo()));`
+
 ```php
 <?php
 
@@ -13,7 +17,8 @@ try {
     $db = new PDO("mysql:host=$servname;dbname=$dbname;charset=utf8",$user,$password);
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $db->beginTransaction();
-    $req = $db->query($sql);
+    $req = $db->query($sql) or die(print_r($db->errorInfo()));
+;
 
 } catch(PDOException $e){
     $db->rollBack();
