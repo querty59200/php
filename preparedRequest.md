@@ -16,7 +16,7 @@ try {
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $db->beginTransaction();
     $req = $db->prepare($sql);
-    $req->execute(array('Florent'));
+    $req->execute(array('Florent')) or die(print_r($db->errorInfo()));
 
 } catch(PDOException $e){
     $db->rollBack();
